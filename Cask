@@ -29,6 +29,11 @@
 (depends-on "init-loader")
 (depends-on "helm")
 
+;; face
+;; http://yohshiy.blog.fc2.com/blog-entry-251.html
+(depends-on "rainbow-delimiters")
+(depends-on "rainbow-mode")
+
 ;; e2wm
 (depends-on "window-layout")
 (depends-on "e2wm")
