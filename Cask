@@ -27,3 +27,4 @@
 (depends-on "yasnippet")
 
 (depends-on "init-loader")
+(depends-on "helm")
