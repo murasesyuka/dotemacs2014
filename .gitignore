@@ -1,4 +1,6 @@
 
 .cask
+.fonts
 
 *.~
+*.elc
