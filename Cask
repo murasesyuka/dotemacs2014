@@ -38,3 +38,18 @@
 (depends-on "window-layout")
 (depends-on "e2wm")
 ;(depends-on "e2wm-vcs" :git "https://github.com/kiwanami/emacs-window-manager.git" :files ("*.el" (:exclude "e5wm-vsc.el"))
+
+; c/cpp
+
+; clojure
+(depends-on "clojure-mode")
+
+; haskell
+(depends-on "haskell-mode")
+
+; javascript
+(depends-on "coffee-mode")
+
+; ruby/rails
+(depends-on "ruby-mode")
+
