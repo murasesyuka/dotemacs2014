@@ -52,4 +52,7 @@
 
 ; ruby/rails
 (depends-on "ruby-mode")
+(depends-on "ruby-electric")
+(depends-on "rinari")
+(depends-on "slim-mode")
 
