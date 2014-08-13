@@ -21,22 +21,22 @@
 (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 (add-hook 'ruby-mode-hook '(lambda () (inf-ruby-keys)))
 
-;; ruby-electric.el --- electric editing commands for ruby files
-(require 'ruby-electric)
-;;; ; https://github.com/okkez/dotfiles
-;; ruby-mode でもEnterでインデントする
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             ;(require 'ruby-electric)
-             (ruby-electric-mode t)
-             (setq default-abbrev-mode nil)
-             (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
-             (define-key ruby-mode-map "\C-j" 'newline)))
-;; ruby-electric-mode 優先順位を最下位にする。[ruby-list:45511]
-(let ((rel (assq 'ruby-electric-mode minor-mode-map-alist)))
-  (setq minor-mode-map-alist (append
-                              (delete rel minor-mode-map-alist)
-                              (list rel))))
+;; ;; ruby-electric.el --- electric editing commands for ruby files
+;; (require 'ruby-electric)
+;; ;;; ; https://github.com/okkez/dotfiles
+;; ;; ruby-mode でもEnterでインデントする
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              ;(require 'ruby-electric)
+;;              (ruby-electric-mode t)
+;;              (setq default-abbrev-mode nil)
+;;              (define-key ruby-mode-map "\C-m" 'ruby-reindent-then-newline-and-indent)
+;;              (define-key ruby-mode-map "\C-j" 'newline)))
+;; ;; ruby-electric-mode 優先順位を最下位にする。[ruby-list:45511]
+;; (let ((rel (assq 'ruby-electric-mode minor-mode-map-alist)))
+;;   (setq minor-mode-map-alist (append
+;;                               (delete rel minor-mode-map-alist)
+;;                               (list rel))))
 
 
 (setq ruby-indent-level 2)
