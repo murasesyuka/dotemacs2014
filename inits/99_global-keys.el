@@ -38,3 +38,39 @@
 
 
 
+; http://qiita.com/sho7650/items/7d4a152c08c4f9d4cf14
+;;; 現在行を目立たせる
+(global-hl-line-mode)
+
+;; Window 分割を画面サイズに従って計算する
+(defun split-window-vertically-n (num_wins)
+  (interactive "p")
+  (if (= num_wins 2)
+      (split-window-vertically)
+    (progn
+      (split-window-vertically
+       (- (window-height) (/ (window-height) num_wins)))
+      (split-window-vertically-n (- num_wins 1)))))
+(defun split-window-horizontally-n (num_wins)
+  (interactive "p")
+  (if (= num_wins 2)
+      (split-window-horizontally)
+    (progn
+      (split-window-horizontally
+       (- (window-width) (/ (window-width) num_wins)))
+      (split-window-horizontally-n (- num_wins 1)))))
+
+;; Window 分割・移動を C-t で
+(defun other-window-or-split ()
+  (interactive)
+  (when (one-window-p)
+    (if (>= (window-body-width) 270)
+        (split-window-horizontally-n 3)
+      (split-window-horizontally)))
+  (other-window 1))
+(global-set-key (kbd "C-t") 'other-window-or-split)
+
+;; バックアップファイルを作らないようにする
+(setq make-backup-files nil)
+;;; 終了時にオートセーブファイルを消す
+(setq delete-auto-save-files t)
