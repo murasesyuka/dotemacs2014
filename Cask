@@ -39,6 +39,10 @@
 (depends-on "e2wm")
 ;(depends-on "e2wm-vcs" :git "https://github.com/kiwanami/emacs-window-manager.git" :files ("*.el" (:exclude "e5wm-vsc.el"))
 
+
+;;; program language ;;;
+
+
 ; c/cpp
 
 ; clojure
@@ -56,3 +60,13 @@
 (depends-on "rinari")
 (depends-on "slim-mode")
 
+
+;;; misc ;;;
+
+; misc
+(depends-on "yascroll")
+(depends-on "lispxmp")
+;(depends-on "paredit")
+(depends-on "auto-save-buffers-enhanced")
+
+(depends-on "eldoc-extension")

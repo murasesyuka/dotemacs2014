@@ -110,29 +110,33 @@
 (require 'lispxmp)
 ;; emacs-lisp-modeでC-c C-dを押すと注釈される
 (define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp)
-;;; 括弧の対応を保持して変種する設定
-(require 'paredit)
-(dolist (hook (list
-               ;; 'c-mode-hook
-               ;; 'c++-mode-hook
-               ;; 'java-mode-hook
-               ;; 'haskell-mode-hook
-               'emacs-lisp-mode-hook
-               'lisp-interaction-mode-hook
-               'lisp-mode-hook
-               ;; 'maxima-mode-hook
-               'ielm-mode-hook
-               ))
-  (add-hook hook '(lambda () (paredit-mode 1))))
-(require 'auto-async-byte-compile)
-;; 自動バイトコンパイルを無効化にするファイル名の正規表現
-(setq auto-async-byte-compile-exclude-files-regexp "/junk/")
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
-;; (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-;; (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-;; (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
-;; (setq eldoc-idle-delay 0.2)            ; すぐに表示したい
-;; (setq eldoc-minor-mode-string "")      ; モードラインにElDocと表示しない
+;; ;;; 括弧の対応を保持して変種する設定
+;; (require 'paredit)
+;; (dolist (hook (list
+;;                ;; 'c-mode-hook
+;;                ;; 'c++-mode-hook
+;;                ;; 'java-mode-hook
+;;                ;; 'haskell-mode-hook
+;;                'emacs-lisp-mode-hook
+;;                'lisp-interaction-mode-hook
+;;                'lisp-mode-hook
+;;                ;; 'maxima-mode-hook
+;;                'ielm-mode-hook
+;;                ))
+;;   (add-hook hook '(lambda () (paredit-mode 1))))
+
+
+;; (require 'auto-async-byte-compile)
+;; ;; 自動バイトコンパイルを無効化にするファイル名の正規表現
+;; (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
+;; (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+;; ;; (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+;; ;; (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+;; ;; (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+;; ;; (setq eldoc-idle-delay 0.2)            ; すぐに表示したい
+;; ;; (setq eldoc-minor-mode-string "")      ; モードラインにElDocと表示しない
+
+
 ;; 釣り合いのとれる括弧をハイライトする
 (show-paren-mode 1)
 ;; 改行と同時にインデントも行う
@@ -150,12 +154,12 @@
 (ffap-bindings)
 
 
-;;; uniquify.el
-(require 'uniquify)
-;; filename<dif> 形式バッファ名にする
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-;; *で囲まれたバッファ名は対象外
-(setq uniquify-ignore-buffres-re "*[^*]+*")
+;; ;;; uniquify.el
+;; (require 'uniquify)
+;; ;; filename<dif> 形式バッファ名にする
+;; (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+;; ;; *で囲まれたバッファ名は対象外
+;; (setq uniquify-ignore-buffres-re "*[^*]+*")
 
 
 ;;; iswitchb.el
@@ -168,12 +172,12 @@
 (setq iswitchb-prompt-newbuffer nil)
 
 
-;; (install-elisp-from-emacswiki "recentf-ext.el")
-;; 最近のファイルを500個を保存する
-(setq recentf-max-saved-items 3000)
-;; 最近使ったファイルを加えないでファイルを正規表現でしてする
-(setq recentf-exclude '("/TAGS$" "/var/tmp/"))
-(require 'recentf-ext)
+;; ;; (install-elisp-from-emacswiki "recentf-ext.el")
+;; ;; 最近のファイルを500個を保存する
+;; (setq recentf-max-saved-items 3000)
+;; ;; 最近使ったファイルを加えないでファイルを正規表現でしてする
+;; (setq recentf-exclude '("/TAGS$" "/var/tmp/"))
+;; (require 'recentf-ext)
 
 
 ;; emacsclient
@@ -225,29 +229,29 @@
 ;; ;; (setq migemo-regex-dictionary nil)
 
 
-;; (install-elisp-from-emacswiki "point-undo.el")
-(require 'point-undo)
-(define-key global-map (kbd "<f7>") 'point-undo)
-(define-key global-map (kbd "S-<f7>") 'point-redo)
+;; ;; (install-elisp-from-emacswiki "point-undo.el")
+;; (require 'point-undo)
+;; (define-key global-map (kbd "<f7>") 'point-undo)
+;; (define-key global-map (kbd "S-<f7>") 'point-redo)
 
 
-;; (install-elisp "http://cvs.savannah.gnu.org/viewvc/*checkout*/bm/bm/bm.el")
-;; save bookmarks
-(setq-default bm-buffer-persistence nil)
-(setq bm-restore-repository-on-load t)
-(require 'bm)
-;; Restoring bookmarks when on file find.
-(add-hook 'find-file-hooks 'bm-buffer-restore)
-(add-hook 'after-revert-hook 'bm-buffer-restore)
-;; Saving bookmark data on killing and saving a buffer
-(add-hook 'kill-buffer-hook 'bm-buffer-save)
-(add-hook 'after-save-hook 'bm-buffer-save)
-(add-hook 'vc-before-checkin-hook 'bm-buffer-save)
-;; ;; Loading the repository from file when on start up.
-;; (add-hook' after-init-hook 'bm-repository-load)
-(global-set-key (kbd "C-M-SPC") 'bm-toggle)
-(global-set-key (kbd "M-[") 'bm-previous)
-(global-set-key (kbd "M-]") 'bm-next)
+;; ;; (install-elisp "http://cvs.savannah.gnu.org/viewvc/*checkout*/bm/bm/bm.el")
+;; ;; save bookmarks
+;; (setq-default bm-buffer-persistence nil)
+;; (setq bm-restore-repository-on-load t)
+;; (require 'bm)
+;; ;; Restoring bookmarks when on file find.
+;; (add-hook 'find-file-hooks 'bm-buffer-restore)
+;; (add-hook 'after-revert-hook 'bm-buffer-restore)
+;; ;; Saving bookmark data on killing and saving a buffer
+;; (add-hook 'kill-buffer-hook 'bm-buffer-save)
+;; (add-hook 'after-save-hook 'bm-buffer-save)
+;; (add-hook 'vc-before-checkin-hook 'bm-buffer-save)
+;; ;; ;; Loading the repository from file when on start up.
+;; ;; (add-hook' after-init-hook 'bm-repository-load)
+;; (global-set-key (kbd "C-M-SPC") 'bm-toggle)
+;; (global-set-key (kbd "M-[") 'bm-previous)
+;; (global-set-key (kbd "M-]") 'bm-next)
 
 
 
@@ -272,69 +276,69 @@
 ;(sense-region-on)
 
 
-;; ;;; http://www.nomtats.com/2010/11/auto-completeelemacs.html
-;; ;; auto-complete.el
-;; (require 'auto-complete-config)
-;; ;; (ac-config-default)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121022.2254/dict/")
-;; (require 'auto-complete-clang)
-(defun my-ac-cc-mode-setup ()
-  ;; 読み込むプリコンパイル済みヘッダ
-  (setq ac-clang-prefix-header "stdafx.pch")
-  ;; 補完を自動で開始しない
-  (setq ac-auto-start nil)
-  (setq ac-clang-flags '("-w" "-ferror-limit" "1"))
-  (setq ac-sources (append '(ac-source-clang
-                             ac-source-yasnippet
-                             ac-source-gtags)
-                           ac-sources)))
+;; ;; ;;; http://www.nomtats.com/2010/11/auto-completeelemacs.html
+;; ;; ;; auto-complete.el
+;; ;; (require 'auto-complete-config)
+;; ;; ;; (ac-config-default)
+;; ;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121022.2254/dict/")
+;; ;; (require 'auto-complete-clang)
+;; (defun my-ac-cc-mode-setup ()
+;;   ;; 読み込むプリコンパイル済みヘッダ
+;;   (setq ac-clang-prefix-header "stdafx.pch")
+;;   ;; 補完を自動で開始しない
+;;   (setq ac-auto-start nil)
+;;   (setq ac-clang-flags '("-w" "-ferror-limit" "1"))
+;;   (setq ac-sources (append '(ac-source-clang
+;;                              ac-source-yasnippet
+;;                              ac-source-gtags)
+;;                            ac-sources)))
 
+;; ;; (defun my-ac-config ()
+;; ;;   (global-set-key "\M-/" 'ac-start)
+;; ;;   ;; C-n/C-p で候補を選択
+;; ;;   (define-key ac-complete-mode-map "\C-n" 'ac-next)
+;; ;;   (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+;; ;;   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+;; ;;   (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; ;;   (add-hook 'ruby-mode-hook 'ac-css-mode-setup)
+;; ;;   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+;; ;;   (global-auto-complete-mode t))
+
+;; ;; (my-ac-config)
+
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121022.2254/dict/")
+;; ;; (ac-config-default)
+    
+;; (require 'auto-complete-clang)
+    
+;; ;;(setq ac-auto-start nil)
+;; (setq ac-quick-help-delay 0.5)
+;; ;; (ac-set-trigger-key "TAB")
+;; ;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
+;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
 ;; (defun my-ac-config ()
+;;   (setq-default ac-sources '(ac-source-abbrev
+;; 			     ac-source-dictionary
+;; 			     ac-source-words-in-same-mode-buffers))
 ;;   (global-set-key "\M-/" 'ac-start)
+;;   ;; ;; C-n/C-p で候補を選択
+;;   ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
+;;   ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 ;;   ;; C-n/C-p で候補を選択
-;;   (define-key ac-complete-mode-map "\C-n" 'ac-next)
-;;   (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+;;   (setq ac-use-menu-map t)
+;;   (define-key ac-menu-map "\C-n" 'ac-next)
+;;   (define-key ac-menu-map "\C-p" 'ac-previous)
 ;;   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+;;   (add-hook 'c++-mode-common-hook 'ac-cc-mode-setup)
 ;;   (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-;;   (add-hook 'ruby-mode-hook 'ac-css-mode-setup)
+;;   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+;;   (add-hook 'css-mode-hook 'ac-css-mode-setup)
 ;;   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 ;;   (global-auto-complete-mode t))
 
+;; ;; ac-source-gtags
 ;; (my-ac-config)
-
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121022.2254/dict/")
-;; (ac-config-default)
-    
-(require 'auto-complete-clang)
-    
-;;(setq ac-auto-start nil)
-(setq ac-quick-help-delay 0.5)
-;; (ac-set-trigger-key "TAB")
-;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
-(define-key ac-mode-map  [(control tab)] 'auto-complete)
-(defun my-ac-config ()
-  (setq-default ac-sources '(ac-source-abbrev
-			     ac-source-dictionary
-			     ac-source-words-in-same-mode-buffers))
-  (global-set-key "\M-/" 'ac-start)
-  ;; ;; C-n/C-p で候補を選択
-  ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
-  ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
-  ;; C-n/C-p で候補を選択
-  (setq ac-use-menu-map t)
-  (define-key ac-menu-map "\C-n" 'ac-next)
-  (define-key ac-menu-map "\C-p" 'ac-previous)
-  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-  (add-hook 'c++-mode-common-hook 'ac-cc-mode-setup)
-  (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-  (add-hook 'css-mode-hook 'ac-css-mode-setup)
-  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-  (global-auto-complete-mode t))
-
-;; ac-source-gtags
-(my-ac-config)
 
 ;; ;;;
 ;; ;;; chapter08
@@ -374,14 +378,14 @@
 ;;;
 
 
-;; (install-elisp-from-emacswiki "summarye.el")
-(require 'summarye)
-(global-set-key (kbd "C-7") 'se/make-summary-buffer)
+;; ;; (install-elisp-from-emacswiki "summarye.el")
+;; (require 'summarye)
+;; (global-set-key (kbd "C-7") 'se/make-summary-buffer)
 
 
-;; (auto-install-batch translator)
-(require 'text-translator)
-(setq text-translator-auto-selection-func
-      'text-translator-translate-by-auto-selection-enja)
+;; ;; (auto-install-batch translator)
+;; (require 'text-translator)
+;; (setq text-translator-auto-selection-func
+;;       'text-translator-translate-by-auto-selection-enja)
 
 
