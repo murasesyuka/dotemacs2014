@@ -10,6 +10,14 @@
 
 
 
+;; rainbow-mode
+(defun my-rainbow-mode-turn-on ()
+  (rainbow-mode t))  
+(add-hook 'css-mode-hook 'my-rainbow-mode-turn-on)
+(add-hook 'html-mode-hook 'my-rainbow-mode-turn-on)
+
+
+
 (require 'rainbow-delimiters)
 
 ;(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
