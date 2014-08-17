@@ -60,6 +60,8 @@
 (depends-on "rinari")
 (depends-on "slim-mode")
 
+; ATS2
+(depends-on "ATS-Postiats" :git "https://github.com/githwxi/ATS-Postiats.git" :files ("utils/emacs/*.el"))
 
 ;;; misc ;;;
 
