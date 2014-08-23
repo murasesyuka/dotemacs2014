@@ -44,6 +44,8 @@
 
 
 ; c/cpp
+(depends-on "c-eldoc")
+;(depends-on "cc-defs")
 
 ; clojure
 (depends-on "clojure-mode")
@@ -63,12 +65,20 @@
 ; ATS2
 (depends-on "ATS-Postiats" :git "https://github.com/githwxi/ATS-Postiats.git" :files ("utils/emacs/*.el"))
 
+;;; util ;;;
+
+; quickrun
+(depends-on "quickrun")
+
+; flymake
+(depends-on "flymake")
+
 ;;; misc ;;;
 
 ; misc
 (depends-on "yascroll")
 (depends-on "lispxmp")
-;(depends-on "paredit")
+(depends-on "paredit")
 (depends-on "auto-save-buffers-enhanced")
 
 (depends-on "eldoc-extension")

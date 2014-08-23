@@ -23,7 +23,6 @@
 	    (setq tab-width 8)
 	    (setq indent-tabs-mode t)	; インデントは空白文字で行う（TABコードを空白に変換）
             (c-turn-on-eldoc-mode)
-	    (color-theme-arjen)
             ))
 
 (add-hook 'c++-mode-hook
@@ -34,5 +33,4 @@
 	    (setq tab-width 4)
 	    ;; (c-set-offset 'innamespace 0)   ; namespace {}の中はインデントしない
 	    ;; (c-set-offset 'arglist-close 0) ; 関数の引数リストの閉じ括弧はインデントしない
-	    (color-theme-snow)
             ))
