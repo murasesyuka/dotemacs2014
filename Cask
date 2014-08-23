@@ -73,6 +73,9 @@
 ; flymake
 (depends-on "flymake")
 
+; org-mode
+(depends-on "org-tree-slide" :git "https://github.com/takaxp/org-tree-slide")
+
 ;;; misc ;;;
 
 ; misc

@@ -11,7 +11,13 @@
 
 (add-hook 'org-mode-hook 'turn-on-iimage-mode)
 
-;; ;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
-;; ;; (auto-install-from-url "https://raw.github.com/takaxp/org-tree-slide/master/org-tree-slide.el")
+;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
+;; (auto-install-from-url "https://raw.github.com/takaxp/org-tree-slide/master/org-tree-slide.el")
 
-;; (require 'org-tree-slide)
+(require 'org-tree-slide)
+
+(define-key org-mode-map (kbd "<f8>") 'org-tree-slide-mode)
+(define-key org-mode-map (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
+
+
+
