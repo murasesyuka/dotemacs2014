@@ -54,6 +54,7 @@
 (depends-on "haskell-mode")
 
 ; javascript
+(depends-on "js2-mode")
 (depends-on "coffee-mode")
 
 ; ruby/rails
