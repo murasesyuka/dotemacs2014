@@ -24,3 +24,7 @@
 ;; (add-hook 'shadow-find-unshadow-hook
 ;;           (lambda () (auto-revert-mode 1)))
 
+(require 'tss)
+
+(setq tss-popup-help-key "C-:")
+(setq tss-jump-to-definition-key "C->")
