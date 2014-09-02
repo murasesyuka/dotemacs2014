@@ -40,10 +40,6 @@
 ;;; 少しうるさい
 ;(icomplete-mode 1)
 
-;;; http://d.hatena.ne.jp/khiker/20070129/nyumon_gnu_emacs
-;;; 少し使いやすいファイラ
-(setq dired-dwim-target t)
-
 ;;; ; http://d.hatena.ne.jp/peccu/20100202/1265088619
 ;;; 矩形選択と連番挿入
 ; (setq cua-enable-cua-key nil)
