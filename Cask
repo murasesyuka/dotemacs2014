@@ -54,7 +54,10 @@
 (depends-on "haskell-mode")
 
 ; javascript
+(depends-on "js2-mode")
 (depends-on "coffee-mode")
+(depends-on "tss")
+(depends-on "emacs-tss" :git "https://github.com/aki2o/emacs-tss.git")
 
 ; ruby/rails
 (depends-on "ruby-mode")
