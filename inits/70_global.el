@@ -1,42 +1,28 @@
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 
-;;; ;http://uguisu.skr.jp/Windows/gtags.html
-;; GNU GLOBAL(gtags)
-(autoload 'gtags-mode "gtags" "" t)
-(setq gtags-mode-hook
-      '(lambda ()
-         (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)
-         (local-set-key "\M-s" 'gtags-find-symbol)
-         (local-set-key "\C-t" 'gtags-pop-stack)
-         ))
-
-(add-hook 'c-mode-common-hook
-          '(lambda()
-             (gtags-mode 1)
-             (gtags-make-complete-list)
-             ))
-
 ;;; ;https://github.com/syohex/emacs-helm-gtags
-;; helm-gtags
-(require 'helm-config)
-(require 'helm-gtags)
-
-(add-hook 'c-mode-hook (lambda () (helm-gtags-mode)))
+;;; Enable helm-gtags-mode
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 ;; customize
-(setq helm-c-gtags-path-style 'relative)
-(setq helm-c-gtags-ignore-case t)
-;(setq helm-c-gtags-read-only t)
+(custom-set-variables
+ '(helm-gtags-path-style 'relative)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-auto-update t))
 
 ;; key bindings
-(add-hook 'helm-gtags-mode-hook
-          '(lambda ()
-              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-              (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
+(eval-after-load "helm-gtags"
+  '(progn
+     (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+     (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+     (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
 
 ;; http://qiita.com/hayamiz/items/8e8c7fca64b4810d8e78
 (defun update-gtags ()
