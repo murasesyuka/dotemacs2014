@@ -44,10 +44,12 @@
 
 ;;; program language ;;;
 
-
 ; c/cpp
 (depends-on "c-eldoc")
 ;(depends-on "cc-defs")
+
+; elisp
+(depends-on "elisp-slime-nav")
 
 ; clojure
 (depends-on "clojure-mode")
