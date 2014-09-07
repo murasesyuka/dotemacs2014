@@ -5,3 +5,8 @@
 
 (global-set-key (kbd "C-;") 'helm-mini)
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+
+
+(require 'helm-descbinds)
+(helm-descbinds-mode)
