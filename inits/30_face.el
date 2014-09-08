@@ -35,9 +35,22 @@
    (cl-callf color-saturate-name (face-foreground face) 30)))
 
 
+;;; menu bar
+;(menu-bar-mode -1)
 
-;;; scrollバー
+;;; tool bar
+(tool-bar-mode -1)
+
+;;; scroll bar
 ;; http://d.hatena.ne.jp/m2ym/20110401/1301617991
 (require 'yascroll)
 (global-yascroll-bar-mode 1)
+(scroll-bar-mode -1)
+
+
+;;; 色を付ける
+(global-font-lock-mode t)
+;(setq font-lock-support-mode 'fast-lock-mode)
+(setq font-lock-maximum-decoration t)
+(setq fast-lock-cache-directories '("~/.emacs-flc" "."))
 

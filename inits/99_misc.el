@@ -17,15 +17,6 @@
 ;;        'text-scale-decrease)))
 
 
-;;; 色を付ける
-(global-font-lock-mode t)
-;(setq font-lock-support-mode 'fast-lock-mode)
-(setq font-lock-maximum-decoration t)
-(setq fast-lock-cache-directories '("~/.emacs-flc" "."))
-
-;;; ツールバーを消す
-(tool-bar-mode 0)
-
 
 
 ;;; 補完時に大文字小文字を区別しない
