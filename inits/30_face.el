@@ -54,3 +54,5 @@
 (setq font-lock-maximum-decoration t)
 (setq fast-lock-cache-directories '("~/.emacs-flc" "."))
 
+;;; nyan bar
+(nyan-mode 1)
