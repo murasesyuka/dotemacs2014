@@ -56,3 +56,7 @@
 
 ;;; nyan bar
 (nyan-mode 1)
+
+;;; show line/column
+;(line-number-mode t)
+(column-number-mode t)
