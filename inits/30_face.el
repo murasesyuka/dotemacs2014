@@ -55,8 +55,11 @@
 (setq fast-lock-cache-directories '("~/.emacs-flc" "."))
 
 ;;; nyan bar
-(nyan-mode 1)
+(nyan-mode 1)				;TODO;conflict powerline
 
 ;;; show line/column
 ;(line-number-mode t)
 (column-number-mode t)
+
+(require 'powerline)
+(powerline-default-theme)		;TODO;not disable?

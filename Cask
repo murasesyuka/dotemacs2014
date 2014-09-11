@@ -36,6 +36,7 @@
 ;; http://yohshiy.blog.fc2.com/blog-entry-251.html
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
+(depends-on "powerline")
 
 ;; e2wm
 (depends-on "window-layout")
