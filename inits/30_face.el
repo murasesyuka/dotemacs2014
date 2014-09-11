@@ -12,7 +12,8 @@
 
 ;; rainbow-mode
 (defun my-rainbow-mode-turn-on ()
-  (rainbow-mode t))  
+  (rainbow-mode t))
+
 (add-hook 'css-mode-hook 'my-rainbow-mode-turn-on)
 (add-hook 'html-mode-hook 'my-rainbow-mode-turn-on)
 
@@ -28,11 +29,12 @@
 ; ;; 5.1. using stronger colors
 (require 'cl-lib)
 (require 'color)
+
 (cl-loop
  for index from 1 to rainbow-delimiters-max-face-count
  do
  (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
-   (cl-callf color-saturate-name (face-foreground face) 30)))
+   (cl-callf color-saturate-name (face-foreground face) 90)))
 
 
 ;;; menu bar
@@ -52,7 +54,7 @@
 (global-font-lock-mode t)
 ;(setq font-lock-support-mode 'fast-lock-mode)
 (setq font-lock-maximum-decoration t)
-(setq fast-lock-cache-directories '("~/.emacs-flc" "."))
+;(setq fast-lock-cache-directories '("~/.emacs-flc" "."))
 
 ;;; nyan bar
 (nyan-mode 1)				;TODO;conflict powerline
