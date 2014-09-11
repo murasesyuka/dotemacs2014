@@ -26,6 +26,8 @@
 (depends-on "web-mode")
 (depends-on "yasnippet")
 
+;;; under custom ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (depends-on "init-loader")
 (depends-on "helm")
 
@@ -41,7 +43,7 @@
 ;; e2wm
 (depends-on "window-layout")
 (depends-on "e2wm")
-;(depends-on "e2wm-vcs" :git "https://github.com/kiwanami/emacs-window-manager.git" :files ("*.el" (:exclude "e5wm-vsc.el"))
+
 
 ;; dired
 (depends-on "direx")
