@@ -1,4 +1,4 @@
-;;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 (load-theme 'misterioso t)
 
