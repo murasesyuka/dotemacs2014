@@ -2,7 +2,7 @@
 
 ;;;http://d.hatena.ne.jp/syohex/20111201/1322665378
 
-(require 'quickrun)
+;; (require 'quickrun) ;autoload
 
 ;; 結果の出力バッファと元のバッファを行き来したい場合は
 ;; ':stick t'の設定をするとよいでしょう

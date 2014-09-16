@@ -1,4 +1,4 @@
-;;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
+;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 (load-theme 'misterioso t)
 
@@ -56,12 +56,12 @@
 (setq font-lock-maximum-decoration t)
 ;(setq fast-lock-cache-directories '("~/.emacs-flc" "."))
 
-;;; nyan bar
-(nyan-mode 1)				;TODO;conflict powerline
-
 ;;; show line/column
 ;(line-number-mode t)
-(column-number-mode t)
+(column-number-mode 1)
 
 (require 'powerline)
 (powerline-default-theme)		;TODO;not disable?
+
+;;; nyan bar
+(nyan-mode 1)				;TODO;conflict powerline
