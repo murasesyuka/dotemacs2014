@@ -60,8 +60,8 @@
 ;(line-number-mode t)
 (column-number-mode 1)
 
-(require 'powerline)
-(powerline-default-theme)		;TODO;not disable?
+;; (require 'powerline)
+;; (powerline-default-theme)		;TODO;not disable?
 
 ;;; nyan bar
 (nyan-mode 1)				;TODO;conflict powerline
