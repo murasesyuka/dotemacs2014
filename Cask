@@ -48,7 +48,8 @@
 ;; dired
 (depends-on "direx")
 
-;; ace-jump
+;; ace-[isearch|jump]
+(depends-on "ace-isearch")
 (depends-on "ace-jump-mode")
 
 ;;; program language ;;;
