@@ -48,6 +48,9 @@
 ;; dired
 (depends-on "direx")
 
+;; ace-jump
+(depends-on "ace-jump-mode")
+
 ;;; program language ;;;
 
 ; c/cpp
