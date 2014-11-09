@@ -1,5 +1,7 @@
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
+(global-ace-isearch-mode 1)
+
 ;; ヒント文字に使う文字を指定する
 (setq ace-jump-mode-move-keys
       (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
