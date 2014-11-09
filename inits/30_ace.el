@@ -5,6 +5,6 @@
       (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
 ;; ace-jump-word-modeのとき文字を尋ねないようにする
 (setq ace-jump-word-mode-use-query-char nil)
-(global-set-key (kbd "C-:") 'ace-jump-char-mode)
-(global-set-key (kbd "C-;") 'ace-jump-word-mode)
-(global-set-key (kbd "C-M-;") 'ace-jump-line-mode)
+;(global-set-key (kbd "C-:") 'ace-jump-char-mode)
+;(global-set-key (kbd "C-;") 'ace-jump-word-mode);conflict helm
+;(global-set-key (kbd "C-M-;") 'ace-jump-line-mode)
