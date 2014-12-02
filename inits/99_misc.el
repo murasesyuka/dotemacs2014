@@ -106,15 +106,6 @@
 ;; (setq uniquify-ignore-buffres-re "*[^*]+*")
 
 
-;;; iswitchb.el
-(iswitchb-mode 1)
-;; バッファ読み取り関数を iswitchb にする
-(setq read-buffer-function 'iswitchb-read-buffer)
-;; 部分文字列の代わりに正規表現を使う場合は t に設定する
-(setq iswitchb-regexp nil)
-;; 新しいバッファを作成するときにいちいち聞いてこない
-(setq iswitchb-prompt-newbuffer nil)
-
 
 ;; ;; (install-elisp-from-emacswiki "recentf-ext.el")
 ;; ;; 最近のファイルを500個を保存する
