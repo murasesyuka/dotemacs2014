@@ -72,5 +72,3 @@
 
 ;; バックアップファイルを作らないようにする
 (setq make-backup-files nil)
-;;; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)

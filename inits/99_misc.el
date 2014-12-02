@@ -145,11 +145,26 @@
             (set-keyboard-coding-system 'utf-8)))
 
 
-;; (install-elisp "http://homepage3.nifty.com/oatu/emacs/archives/auto-save-buffers.el")
+;;; http://rubikitch.com/2014/11/23/auto-save-buffers-enhanced/
 (require 'auto-save-buffers-enhanced)
-(auto-save-buffers-enhanced t)
-(run-with-idle-timer 2 t 'auto-save-buffers) 
 
+;;; 特定のファイルのみ有効にする
+(setq auto-save-buffers-enhanced-include-regexps '(".+")) ;全ファイル
+
+;;; C-x a sでauto-save-buffers-enhancedの有効・無効をトグル
+(global-set-key "\C-xas" 'auto-save-buffers-enhanced-toggle-activity)
+
+;;; Wroteのメッセージを抑制
+(setq auto-save-buffers-enhanced-quiet-save-p t)
+;;; *scratch*も ~/.emacs.d/scratch に自動保存
+(setq auto-save-buffers-enhanced-save-scratch-buffer-to-file-p t)
+(setq auto-save-buffers-enhanced-file-related-with-scratch-buffer
+      (locate-user-emacs-file "scratch"))
+(auto-save-buffers-enhanced t)
+
+;; ;; If you're using CVS or Subversion or git
+;; (auto-save-buffers-enhanced-include-only-checkout-path t)
+;; (auto-save-buffers-enhanced t)
 
 
 
