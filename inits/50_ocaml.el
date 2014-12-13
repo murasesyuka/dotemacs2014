@@ -33,3 +33,9 @@
 ;; Not required, but useful along with merlin-mode
 (require 'auto-complete)
 (add-hook 'tuareg-mode-hook 'auto-complete-mode)
+
+
+;; -- ocp-indent ------------------------------------------
+
+(setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
+(load-file (concat opam-share "/typerex/ocp-indent/ocp-indent.el"))
