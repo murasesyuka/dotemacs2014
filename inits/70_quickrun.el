@@ -1,3 +1,4 @@
+
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 ;;;http://d.hatena.ne.jp/syohex/20111201/1322665378
@@ -26,5 +27,5 @@
                       :default "c++")
 
 (quickrun-set-default "c++" "c++/g++")
-(quickrun-set-default "ruby" "ruby/mruby")
+;;(quickrun-set-default "ruby" "ruby/ruby")
 

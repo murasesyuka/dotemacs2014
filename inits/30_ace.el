@@ -12,3 +12,5 @@
 ;(global-set-key (kbd "C-:") 'ace-jump-char-mode)
 ;(global-set-key (kbd "C-;") 'ace-jump-word-mode);conflict helm
 ;(global-set-key (kbd "C-M-;") 'ace-jump-line-mode)
+
+(setq ace-isearch-input-idle-delay 0.3)
