@@ -32,6 +32,7 @@
 (depends-on "helm")
 
 ;; helm
+(depends-on "helm-gtags")
 (depends-on "helm-descbinds")
 
 ;; face
