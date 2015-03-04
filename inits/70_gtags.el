@@ -1,5 +1,4 @@
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
-
 ;(require 'helm-gtags);auto load
 
 ;;; ;https://github.com/syohex/emacs-helm-gtags
