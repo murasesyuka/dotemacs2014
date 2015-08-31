@@ -11,9 +11,3 @@
 ;(add-to-list 'yas-extra-mode-hooks 'cperl-mode-hook)
 (yas-global-mode 1)
 
-
-
-
-
-
-
