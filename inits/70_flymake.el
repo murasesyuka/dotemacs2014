@@ -1,6 +1,5 @@
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
-(require 'ats2-flymake)
-
-(setenv "PATSHOME" "/usr")
+;(require 'ats2-flymake)
+;(setenv "PATSHOME" "/usr/bin")
 
