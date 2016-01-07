@@ -88,6 +88,8 @@
 
 ;;; util ;;;
 
+(depends-on "helm-c-yasnippet")
+
 ; quickrun
 (depends-on "quickrun")
 
