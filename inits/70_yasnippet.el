@@ -13,7 +13,7 @@
   '(progn
      (setq helm-c-yas-space-match-any-greedy t) ;[default: nil]
      
-     (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
+     (global-set-key (kbd "C-.") 'helm-c-yas-complete)
 
      ;; (add-to-list 'yas-extra-mode-hooks 'ruby-mode-hook)
      ;; (add-to-list 'yas-extra-mode-hooks 'cperl-mode-hook)
