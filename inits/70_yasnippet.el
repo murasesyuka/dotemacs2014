@@ -28,3 +28,8 @@
   )
 
 
+;; yas/prompt-functions
+;;; http://syohex.hatenablog.com/entry/20121207/1354885367
+;;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
+
+; todo
