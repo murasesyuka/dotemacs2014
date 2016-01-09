@@ -16,16 +16,20 @@
 ;; Add C++ command for C11 and set it default in C++ file.
 (quickrun-add-command "c++/clang++"
                       '((:command . "clang++")
-                        (:exec . ("%c -x c++ -std=c++11 -lstdc++ %o -o %e %s" "%e %a"))
+                        (:exec . ("%c -x c++ -std=c++1z %o -o %e %s"
+				  "%e %a"))
                         (:remove . ("%e")))
                       :default "c++")
 
 (quickrun-add-command "c++/g++"
                       '((:command . "g++")
-                        (:exec . ("%c -x c++ -std=c++11 -lstdc++ %o -o %e %s" "%e %a"))
+                        (:exec . ("%c -x c++ -std=gnu++1z %o -o %e %s"
+				  "%e %a"))
                         (:remove . ("%e")))
                       :default "c++")
 
 (quickrun-set-default "c++" "c++/g++")
+;(quickrun-set-default "c++" "c++/clang++")
+
 ;;(quickrun-set-default "ruby" "ruby/ruby")
 
